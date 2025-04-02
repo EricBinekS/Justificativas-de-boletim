@@ -113,38 +113,42 @@
     </header>
 
     <div class="container">
-        <h1>Justificativa de Parada</h1>
-        <!-- Exibir informações da parada -->
-        <label>TREM</label>
-        <p id="informacoes1"></p>
-        <label>PARADA</label>
-        <p id="informacoes2"></p>
-        <label>PARTIDA</label>
-        <p id="informacoes3"></p>
-        <label>CHEFE DE TURMA</label>
-        <p id="informacoes4"></p>
-        <label>KM DA PARADA</label>
-        <p id="informacoes5"></p>
-        <label>SB DA PARADA</label>
-        <p id="informacoes6"></p>
-        <!-- Exibir a pergunta -->
-        <label>Pergunta:</label>
-        <p">Qual o motivo dessa parada?</p>
-        <!-- Dropdown para selecionar uma opção -->
-        <label>Selecione uma Opção:</label>
-        <select id="opcao">
-            <option value="">Selecione...</option>
-            <option value="opção1">Aguardando licença a frente</option>
-            <option value="opção2">Retirando maquinário/turma da via</option>
-            <option value="opção3">Sem contato com o chefe de equipe via rádio</option>
-            <option value="opção4">Compartilhamento do boletim</option>
-            <option value="opção5">Outro motivo</option>
-        </select>
-        <!-- Campo para o usuário digitar a justificativa -->
-        <label>Observações/Justificativa:</label>
-        <textarea id="justificativa" placeholder="Descreva a parada aqui caso necessario"></textarea>
-        <!-- Botão para enviar a resposta -->
-        <button onclick="enviarResposta()">Enviar Resposta</button>
+        <div>
+            <h1>Justificativa de Parada</h1>
+            <!-- Exibir informações da parada -->
+            <label>TREM</label>
+            <p id="informacoes1"></p>
+            <label>PARADA</label>
+            <p id="informacoes2"></p>
+            <label>PARTIDA</label>
+            <p id="informacoes3"></p>
+            <label>CHEFE DE TURMA</label>
+            <p id="informacoes4"></p>
+            <label>KM DA PARADA</label>
+            <p id="informacoes5"></p>
+            <label>SB DA PARADA</label>
+            <p id="informacoes6"></p>
+        </div>
+        <Div>
+            <!-- Exibir a pergunta -->
+            <label>Pergunta:</label>
+            <p">Qual o motivo dessa parada?</p>
+            <!-- Dropdown para selecionar uma opção -->
+            <label>Selecione uma Opção:</label>
+                <select id="opcao">
+                    <option value="">Selecione...</option>
+                    <option value="opção1">Aguardando licença a frente</option>
+                    <option value="opção2">Retirando maquinário/turma da via</option>
+                    <option value="opção3">Sem contato com o chefe de equipe via rádio</option>
+                    <option value="opção4">Compartilhamento do boletim</option>
+                    <option value="opção5">Outro motivo</option>
+                </select>
+            <!-- Campo para o usuário digitar a justificativa -->
+            <label>Observações/Justificativa:</label>
+            <textarea id="justificativa" placeholder="Descreva a parada aqui caso necessario"></textarea>
+            <!-- Botão para enviar a resposta -->
+            <button onclick="enviarResposta()">Enviar Resposta</button>
+        </Div>
     </div>
     <script>
         // Obter os parâmetros da URL
