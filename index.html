@@ -116,29 +116,29 @@
         <h1>Justificativa de Parada</h1>
         <!-- Exibir informações da parada -->
         <label>TREM</label>
-        <p id="informacoes1">U56</p>
+        <p id="informacoes1"></p>
         <label>PARADA</label>
-        <p id="informacoes2">07:36</p>
+        <p id="informacoes2"></p>
         <label>PARTIDA</label>
-        <p id="informacoes3">07:40</p>
+        <p id="informacoes3"></p>
         <label>CHEFE DE TURMA</label>
-        <p id="informacoes4">JQ59 JOÃO VICTOR QUEIROZ DE OLIVEIRA</p>
+        <p id="informacoes4"></p>
         <label>KM DA PARADA</label>
-        <p id="informacoes5">254.000</p>
+        <p id="informacoes5"></p>
         <label>SB DA PARADA</label>
-        <p id="informacoes6">ZWI2</p>
+        <p id="informacoes6"></p>
         <!-- Exibir a pergunta -->
         <label>Pergunta:</label>
-        <p id="pergunta">Qual o motivo dessa parada?</p>
+        <p">Qual o motivo dessa parada?</p>
         <!-- Dropdown para selecionar uma opção -->
         <label>Selecione uma Opção:</label>
         <select id="opcao">
             <option value="">Selecione...</option>
-            <option value="Aguardando licença a frente">Aguardando licença a frente</option>
-            <option value="Retirando maquinário/turma da via">Retirando maquinário/turma da via</option>
-            <option value="Sem contato com o chefe de equipe via rádio">Sem contato com o chefe de equipe via rádio</option>
-            <option value="Compartilhamento do boletim">Compartilhamento do boletim</option>
-            <option value="Outro motivo">Outro motivo</option>
+            <option value="opção1">Aguardando licença a frente</option>
+            <option value="opção2">Retirando maquinário/turma da via</option>
+            <option value="opção3">Sem contato com o chefe de equipe via rádio</option>
+            <option value="opção4">Compartilhamento do boletim</option>
+            <option value="opção5">Outro motivo</option>
         </select>
         <!-- Campo para o usuário digitar a justificativa -->
         <label>Observações/Justificativa:</label>
@@ -146,17 +146,23 @@
         <!-- Botão para enviar a resposta -->
         <button onclick="enviarResposta()">Enviar Resposta</button>
     </div>
-
     <script>
         // Obter os parâmetros da URL
         const params = new URLSearchParams(window.location.search);
-        const id = params.get('id'); // ID da parada
-        const informacoes = params.get('informacoes'); // Informações da parada
-        const pergunta = params.get('pergunta'); // Pergunta a ser respondida
-
+        const trem = params.get('informacoes1');
+        const parada = params.get('informacoes2');
+        const partida = params.get('informacoes3');
+        const chefe_boletim = params.get('informacoes4');
+        const km_parada = params.get('informacoes5');
+        const sb_parada = params.get('informacoes6');
+        
         // Exibir as informações e a pergunta no formulário
-        document.getElementById('informacoes').textContent = informacoes;
-        document.getElementById('pergunta').textContent = pergunta;
+        document.getElementById('informacoes1').textContent = trem;
+        document.getElementById('informacoes2').textContent = parada;
+        document.getElementById('informacoes3').textContent = partida;
+        document.getElementById('informacoes4').textContent = chefe_boletim;
+        document.getElementById('informacoes5').textContent = km_parada;
+        document.getElementById('informacoes6').textContent = sb_parada;
 
         // Função para enviar a resposta ao webhook
         function enviarResposta() {
@@ -174,9 +180,12 @@
             }
 
             const data = {
-                ID: id,
-                Informacoes: informacoes,
-                Pergunta: pergunta,
+                trem: informacoes1,
+                parada: informacoes2,
+                partida: informacoes3,
+                chefe_boletim: informacoes4,
+                km_parada: informacoes5,
+                sb_parada: informacoes6,
                 Opcao: opcaoSelecionada,
                 Justificativa: justificativa
             };
