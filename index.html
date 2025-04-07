@@ -148,6 +148,7 @@
     <script>
         // Obter os parâmetros da URL
         const params = new URLSearchParams(window.location.search);
+        const id = params.get('informacoesoff');
         const trem = params.get('informacoes1');
         const parada = params.get('informacoes2');
         const partida = params.get('informacoes3');
@@ -156,6 +157,7 @@
         const sb_parada = params.get('informacoes6');
         
         // Exibir as informações e a pergunta no formulário
+        document.getElementById('informacoesoff').textContent = id;
         document.getElementById('informacoes1').textContent = trem;
         document.getElementById('informacoes2').textContent = parada;
         document.getElementById('informacoes3').textContent = partida;
@@ -188,6 +190,7 @@
             document.querySelector('button').disabled = true; // Desativa o botão
     
             const data = {
+                id: informacoesoff,
                 trem: informacoes1,
                 parada: informacoes2,
                 partida: informacoes3,
