@@ -5,105 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Justificativa</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f9;
-        }
-
-        header {
-            background-color: #003865;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-        }
-
-        header img {
-            height: 40px;
-            width: auto;
-        }
-
-        .container {
-            max-width: 450px;
-            margin: 30px auto;
-            background: #ffffff;
-            padding: 25px 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .container h1 {
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #333;
-        }
-
-        .container label {
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 5px;
-            display: block;
-            color: #444;
-        }
-
-        .container p {
-            font-size: 1em;
-            margin-bottom: 15px;
-            background-color: #f1f1f1;
-            padding: 10px;
-            border-radius: 6px;
-            color: #333;
-        }
-
-        .container textarea,
-        .container select {
-            width: 100%;
-            padding: 12px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-        }
-
-        .container textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .container button {
-            width: 100%;
-            padding: 12px;
-            font-size: 1em;
-            font-weight: bold;
-            color: #fff;
-            background: #0066cc;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        .container button:hover {
-            background: #004a99;
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f4f4f9; }
+        header { background-color: #003865; display: flex; align-items: center; padding: 10px 20px; }
+        header img { height: 40px; width: auto; }
+        .container { max-width: 450px; margin: 30px auto; background: #ffffff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+        .container h1 { font-size: 1.6em; margin-bottom: 20px; text-align: center; color: #333; }
+        .container label { font-size: 1em; font-weight: 600; margin-bottom: 5px; display: block; color: #444; }
+        .container p { font-size: 1em; margin-bottom: 15px; background-color: #f1f1f1; padding: 10px; border-radius: 6px; color: #333; }
+        .container textarea, .container select { width: 100%; padding: 12px; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px; box-sizing: border-box; }
+        .container textarea { height: 120px; resize: vertical; }
+        .container button { width: 100%; padding: 12px; font-size: 1em; font-weight: bold; color: #fff; background: #0066cc; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s ease; }
+        .container button:hover { background: #004a99; }
         @media (max-width: 480px) {
-            .container {
-                margin: 15px;
-                padding: 20px 15px;
-            }
-
-            header {
-                padding: 10px 15px;
-                justify-content: center;
-            }
-
-            header img {
-                height: 32px;
-            }
+            .container { margin: 15px; padding: 20px 15px; }
+            header { padding: 10px 15px; justify-content: center; }
+            header img { height: 32px; }
         }
     </style>
 </head>
@@ -111,25 +27,15 @@
     <header>
         <img src="https://brandbook.rumolog.com/assets/img/logo.png" alt="Logotipo Rumo">
     </header>
-
     <div class="container">
         <h1>Justificativa de Parada</h1>
-        <!-- Exibir informações da parada -->
-        <label>TREM</label>
-        <p id="informacoes1"></p>
-        <label>PARADA</label>
-        <p id="informacoes2"></p>
-        <label>PARTIDA</label>
-        <p id="informacoes3"></p>
-        <label>CHEFE DE TURMA</label>
-        <p id="informacoes4"></p>
-        <label>KM DA PARADA</label>
-        <p id="informacoes5"></p>
-        <label>SB DA PARADA</label>
-        <p id="informacoes6"></p>
-        <label>PERGUNTA:</label>
-        <p>Qual o motivo da parada?</p>
-
+        <label>TREM</label><p id="informacoes1"></p>
+        <label>PARADA</label><p id="informacoes2"></p>
+        <label>PARTIDA</label><p id="informacoes3"></p>
+        <label>CHEFE DE TURMA</label><p id="informacoes4"></p>
+        <label>KM DA PARADA</label><p id="informacoes5"></p>
+        <label>SB DA PARADA</label><p id="informacoes6"></p>
+        <label>PERGUNTA:</label><p>Qual o motivo da parada?</p>
         <label>Selecione uma Opção:</label>
         <select id="opcao">
             <option value="">Selecione...</option>
@@ -139,14 +45,11 @@
             <option value="Compartilhamento do boletim">Compartilhamento do boletim</option>
             <option value="Outro motivo">Outro motivo</option>
         </select>
-        <!-- Campo para o usuário digitar a justificativa -->
         <label>Observações/Justificativa:</label>
         <textarea id="justificativa" placeholder="Descreva a parada aqui caso necessario"></textarea>
-        <!-- Botão para enviar a resposta -->
         <button onclick="enviarResposta()">Enviar Resposta</button>
     </div>
     <script>
-        // Obter os parâmetros da URL
         const params = new URLSearchParams(window.location.search);
         const id = params.get('informacoesoff');
         const trem = params.get('informacoes1');
@@ -155,75 +58,75 @@
         const chefe_boletim = params.get('informacoes4');
         const km_parada = params.get('informacoes5');
         const sb_parada = params.get('informacoes6');
-        
-        // Exibir as informações e a pergunta no formulário
+
+        if (localStorage.getItem(`formularioRespondido_${id}`)) {
+            window.location.href = 'resposta_enviada.html';
+        }
+
         document.getElementById('informacoes1').textContent = trem;
         document.getElementById('informacoes2').textContent = parada;
         document.getElementById('informacoes3').textContent = partida;
         document.getElementById('informacoes4').textContent = chefe_boletim;
         document.getElementById('informacoes5').textContent = km_parada;
         document.getElementById('informacoes6').textContent = sb_parada;
-        
-        let isSubmitting = false; // Variável de controle para evitar envios duplicados
-    
+
+        let isSubmitting = false;
+
         function enviarResposta() {
             if (isSubmitting) {
                 alert('Aguarde enquanto a resposta anterior está sendo enviada.');
                 return;
             }
-    
+
             const justificativa = document.getElementById('justificativa').value;
             const opcaoSelecionada = document.getElementById('opcao').value;
-    
+
             if (!justificativa.trim()) {
                 alert('Por favor, insira uma justificativa.');
                 return;
             }
-    
+
             if (!opcaoSelecionada) {
                 alert('Por favor, selecione uma opção.');
                 return;
             }
-    
-            isSubmitting = true; // Bloqueia novos envios
-            document.querySelector('button').disabled = true; // Desativa o botão
-    
+
+            isSubmitting = true;
+            document.querySelector('button').disabled = true;
+
             const data = {
                 id: id,
-                trem: informacoes1,
-                parada: informacoes2,
-                partida: informacoes3,
-                chefe_boletim: informacoes4,
-                km_parada: informacoes5,
-                sb_parada: informacoes6,
+                trem: trem,
+                parada: parada,
+                partida: partida,
+                chefe_boletim: chefe_boletim,
+                km_parada: km_parada,
+                sb_parada: sb_parada,
                 Opcao: opcaoSelecionada,
                 Justificativa: justificativa
             };
-    
+
             const webhookUrl = "https://prod-170.westus.logic.azure.com:443/workflows/8483e5d34ef44d37a36faa2e49002fca/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=o1MkOJsORbLzbSiGQ5KCWoFybzzvrrDEVy1CFtyWcNg";
-    
+
             fetch(webhookUrl, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
             })
             .then(response => {
                 if (response.ok) {
-                    alert('Resposta enviada com sucesso!');
-                    document.getElementById('justificativa').value = '';
-                    document.getElementById('opcao').value = '';
+                    localStorage.setItem(`formularioRespondido_${id}`, 'true');
+                    window.location.href = 'resposta_enviada.html';
                 } else {
                     alert('Erro ao enviar a resposta. Tente novamente.');
-                    document.querySelector('button').disabled = false; // Reativa o botão em caso de erro
+                    document.querySelector('button').disabled = false;
                     isSubmitting = false;
                 }
             })
             .catch(error => {
                 console.error('Erro:', error);
                 alert('Erro ao enviar a resposta. Tente novamente.');
-                document.querySelector('button').disabled = false; // Reativa o botão em caso de erro
+                document.querySelector('button').disabled = false;
                 isSubmitting = false;
             });
         }
